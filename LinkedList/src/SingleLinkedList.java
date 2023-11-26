@@ -62,7 +62,40 @@ public class SingleLinkedList {
 
     }
 
-    public void traverse(){
+    public void delete() {
+        int data, n;
+        Scanner sc = new Scanner(System.in);
+        do {
+
+            if (head == null) {
+                System.out.println("LL is empty");
+            } else {
+                System.out.println("Enter 1 to delete at the beginning, 2 for at the end, 3 for at the position");
+                int m = sc.nextInt();
+
+                switch (m) {
+                    case 1:
+                       Node temp=head;
+                       temp=temp.next;
+                       head=temp;
+                       break;
+                    case 2:
+                        //Node temp=head;
+
+
+                    case 3:
+                        //Node temp=head;
+
+
+                }
+            }
+            System.out.print("Press 1 to add mode data: ");
+            n = sc.nextInt();
+
+        } while (n == 1);
+
+    }
+        public void traverse(){
         Node temp=head;
         if(head==null){
             System.out.println("LL does not exist");
