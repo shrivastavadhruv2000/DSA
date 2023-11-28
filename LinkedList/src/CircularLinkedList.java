@@ -26,9 +26,34 @@ public class CircularLinkedList {
 
             }
             else{
-                new_node.next=head;
-                head=new_node;
-                break;
+                System.out.println("Enter 1 to insert at the beginning, 2 for at the end, 3 for at the position");
+                int m=sc.nextInt();
+                switch(m){
+                    case 1:
+                        new_node.next=head;
+                        head=new_node;
+                        tail.next=head;
+                        break;
+                    case 2:
+                        tail.next=new_node;
+                        tail=new_node;
+                        new_node.next=head;
+                        break;
+                    case 3:
+                        System.out.println("Enter the position");
+                        int pos=sc.nextInt();
+                        Node temp=head;
+                        for(int i=0;i<(pos-1);i++){
+                            temp=temp.next;
+
+                        }
+                        new_node.next=temp.next;
+                        temp.next=new_node;
+                        break;
+
+
+
+                }
             }
             System.out.println("Enter 1 for add more");
             n=sc.nextInt();
@@ -44,6 +69,7 @@ public class CircularLinkedList {
         else{
             do{
                 System.out.println(temp.data + " ");
+                temp=temp.next;
             } while(temp!=head);
         }
     }
